@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: db-helpgr-deployment
+spec:
+#  replicas: 1
+  selector:
+    matchLabels:
+      app: db-helpgr
+  template:
+    metadata:
+      name: db-helpgr
+      labels:
+        app: db-helpgr
+    spec:
+      containers:
+        - name: db-helpgr-container
+          image: mongo:4.4.6
+          ports:
+            - containerPort: 27017
+          envFrom:
+            - configMapRef:
+                name: db-configmap
