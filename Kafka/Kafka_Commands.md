@@ -21,7 +21,7 @@ bin/kafka-topics.sh --create --bootstrap-server localhost:9092 --replication-fac
 
 ---
 
-**ALTERAR TOPIC (alterando para 3 partitions):**
+**CHANGE TOPIC (alterando para 3 partitions):**
 bin/kafka-topics.sh --alter --topic ECOMMERCE_NEW_ORDER --bootstrap-server localhost:9092 --partitions 3
 
 ---
